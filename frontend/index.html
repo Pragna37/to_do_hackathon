@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>QuickTasks AI — To-Do App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>QuickTasks AI</h1>
+    <p class="subtitle">Add, view, update and prioritize tasks — powered by AI suggestions</p>
+  </header>
+
+  <main class="container">
+    <!-- Task Form -->
+    <section class="controls">
+      <form id="taskForm">
+        <input type="hidden" id="taskId" />
+        <div class="row">
+          <input id="title" placeholder="Task title" required />
+          <input id="duration" type="number" min="1" placeholder="Est. mins" />
+        </div>
+        <div class="row">
+          <textarea id="description" placeholder="Description (optional)"></textarea>
+        </div>
+        <div class="row">
+          <label>
+            Deadline: 
+            <input id="deadline" type="date" />
+            <input id="deadlineTime" type="time" />
+          </label>
+          <label class="small">
+            <input id="urgent" type="checkbox" /> Mark urgent
+          </label>
+        </div>
+        <div class="row actions">
+          <button type="submit" id="saveBtn">Add Task</button>
+          <button type="button" id="clearBtn">Clear</button>
+          
+          
+          <button type="button" id="aiTipsBtn">AI Productivity Tips</button>
+         
+        </div>
+      </form>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters">
+      <div class="row">
+        <input id="search" placeholder="Search tasks..." />
+        <select id="filterStatus">
+          <option value="all">All</option>
+          <option value="active">Active</option>
+          <option value="completed">Completed</option>
+        </select>
+        <button id="resetSuggest" class="hidden">Show all</button>
+      </div>
+    </section>
+
+    <!-- Task List -->
+    <section class="tasks">
+      <h2>Tasks</h2>
+      <ul id="taskList" class="task-list"></ul>
+    </section>
+
+    <!-- AI Suggestions -->
+    <section class="ai-section">
+      <h2>AI Suggestions</h2>
+      <div id="aiOutput" class="ai-output"></div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast hidden"></div>
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

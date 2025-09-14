@@ -1,0 +1,45 @@
+:root{
+  --bg:#0f172a;
+  --card:#0b1220;
+  --accent:#06b6d4;
+  --muted:#94a3b8;
+}
+*{box-sizing:border-box}
+body{
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin:0; background:linear-gradient(180deg,#071024, #071730 60%); color:#e6eef6;
+  min-height:100vh; padding:28px;
+}
+.header{ text-align:center; margin-bottom:18px }
+.header h1{ margin:0; font-size:36px; letter-spacing:0.5px }
+.subtitle{ margin:6px 0 0; color:var(--muted) }
+
+.container{ max-width:980px; margin:0 auto; }
+.controls, .tasks, .filters{ background:rgba(255,255,255,0.02); padding:14px; border-radius:10px; margin-bottom:12px; }
+.row{ display:flex; gap:8px; align-items:center; margin-bottom:8px }
+.row.actions{ justify-content:flex-start; flex-wrap:wrap }
+input, textarea, select, button{ padding:8px 10px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:inherit }
+input::placeholder, textarea::placeholder{ color:var(--muted) }
+textarea{ flex:1; min-height:54px; resize:vertical }
+input[type="number"]{ width:110px }
+button{ cursor:pointer; border:none; background:var(--accent); color:#052027; font-weight:600 }
+button#clearBtn{ background:transparent; color:var(--muted); border:1px solid rgba(255,255,255,0.04) }
+button.hidden{ display:none }
+
+.task-list{ list-style:none; padding:0; margin:0 }
+.task-item{ display:flex; gap:12px; padding:12px; align-items:flex-start; border-radius:8px; margin-bottom:10px; background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); border:1px solid rgba(255,255,255,0.03) }
+.task-left{ flex:1 }
+.title-row{ display:flex; gap:10px; align-items:center; }
+.title-row h3{ margin:0; font-size:16px }
+.meta{ font-size:12px; color:var(--muted) }
+.badge{ padding:4px 8px; border-radius:999px; font-size:12px; background:rgba(6,182,212,0.12); color:var(--accent) }
+
+.actions-col{ display:flex; flex-direction:column; gap:6px }
+.icon-btn{ background:transparent; color:var(--muted); border:1px solid rgba(255,255,255,0.03); padding:6px 8px; border-radius:8px; cursor:pointer }
+.icon-btn.danger{ border-color:rgba(255,64,64,0.15); color:#ff8b8b }
+.completed{ opacity:0.5; text-decoration:line-through }
+
+.toast{ position:fixed; right:20px; bottom:20px; background:#091827; padding:10px 14px; border-radius:8px; border:1px solid rgba(255,255,255,0.03) }
+.hidden{ display:none }
+
+.small{ font-size:13px; color:var(--muted) }
